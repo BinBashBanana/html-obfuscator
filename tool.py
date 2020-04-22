@@ -7,7 +7,6 @@ usage = '''\nUsage: this.py [obf|deobf] [filename.html]\n\nNOTE: Files deobfusca
 if len(sys.argv)!=3:
     print(usage)
     sys.exit(0)
-    sys.exit(0)
 opr=sys.argv[1]
 file=sys.argv[2]
 if not os.path.isfile(file):
