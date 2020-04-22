@@ -1,0 +1,27 @@
+<html><head>
+<title>Decode</title>
+<style>
+textarea{width:600px;height:300px;border-width:2px;border-style:solid;border-color:lightgray;overflow:auto;font-family:"Courier";resize:none;font-size:14px;padding:10px} 
+.output{width:600px;height:300px;border-width:2px;border-style:solid;border-color:lightgray;overflow:auto;font-family:"Courier";font-size:14px;white-space:pre-wrap}
+p#output{margin:10px;margin-top:-5px}
+button{padding:5px; width:100px}
+</style>
+<script>
+function convert(){
+var content = document.getElementById("input");
+var output = document.getElementById("output");
+output.textContent = decodeURIComponent(atob(content.value));
+}
+function copy() {
+var output = document.getElementById("output");
+navigator.clipboard.writeText(output.textContent)
+}
+</script>
+</head><body>
+<textarea id="input" placeholder="Input text here..." onchange="convert()"></textarea>
+<br/><h4>Note that you will need to click out of the text area in order for the output to be updated.</h4><br/>
+<div class="output">
+<p id="output">Output text here...</p>
+</div>
+<button onclick="copy()">Copy</button>
+</body></html>
