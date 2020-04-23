@@ -9,9 +9,16 @@ if len(sys.argv)!=2:
     sys.exit(0)
 	
 opr=sys.argv[1]
+lisfile = "list.txt"
+if not os.path.isfile(lisfile):
+	print ('''\nCould not find list.txt!''')
+	sys.exit(0)
 
-rawlis = open('list.txt', 'r').read()
+rawlis = open(lisfile, 'r').read()
 htlis = rawlis.splitlines()
+if htlis == []:
+	print ('''\nList.txt is empty!''')
+	sys.exit(0)
 
 begst = '''<!DOCTYPE html>
 <script type="text/javascript">
