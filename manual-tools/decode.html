@@ -1,10 +1,10 @@
 <html><head>
 <title>Decode</title>
 <style>
-textarea{width:600px;height:300px;border-width:2px;border-style:solid;border-color:lightgray;overflow:auto;font-family:"Courier";resize:none;font-size:14px;padding:10px} 
-.output{width:600px;height:300px;border-width:2px;border-style:solid;border-color:lightgray;overflow:auto;font-family:"Courier";font-size:14px;white-space:pre-wrap}
+textarea{width:600px;height:300px;border-width:2px;border-style:solid;border-color:lightgray;overflow:auto;font-family:"Courier";resize:none;font-size:14px;padding:10px;white-space:nowrap;outline:none;margin-bottom:10px} 
+.output{width:596px;height:296px;border-width:2px;border-style:solid;border-color:lightgray;overflow:auto;font-family:"Courier";font-size:14px;white-space:pre-wrap}
 p#output{margin:10px;margin-top:-5px}
-button{padding:5px; width:100px}
+button{padding:5px;width:100px;margin-top:10px}
 </style>
 <script>
 function convert(){
@@ -18,8 +18,7 @@ navigator.clipboard.writeText(output.textContent)
 }
 </script>
 </head><body>
-<textarea id="input" placeholder="Input text here..." onchange="convert()"></textarea>
-<br/><h4>Note that you will need to click out of the text area in order for the output to be updated.</h4><br/>
+<textarea id="input" placeholder="Input text here..." onkeyup="convert()"></textarea>
 <div class="output">
 <p id="output">Output text here...</p>
 </div>
